@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaSmart - IoT Aquarium System</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Ambient background particles -->
+    <div class="bg-ambient">
+        <div class="bubble" style="--s:18px;--l:10%;--d:0s;--dur:12s"></div>
+        <div class="bubble" style="--s:10px;--l:25%;--d:2s;--dur:9s"></div>
+        <div class="bubble" style="--s:22px;--l:40%;--d:4s;--dur:14s"></div>
+        <div class="bubble" style="--s:14px;--l:55%;--d:1s;--dur:11s"></div>
+        <div class="bubble" style="--s:8px;--l:70%;--d:3s;--dur:8s"></div>
+        <div class="bubble" style="--s:20px;--l:85%;--d:5s;--dur:13s"></div>
+        <div class="bubble" style="--s:12px;--l:92%;--d:0.5s;--dur:10s"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <span class="logo-icon">🐟</span>
+            <span class="logo-text">Aqua<span class="logo-accent">Smart</span></span>
+        </div>
+        <div class="nav-links">
+            <button onclick="showSection('home')"><span>🏠</span> Home</button>
+            <button onclick="showSection('config')"><span>🔑</span> Login</button>
+            <button id="nav-control" onclick="showSection('dashboard')" style="display:none;"><span>🎛️</span> Control Center</button>
+        </div>
+    </nav>
+
+    <div class="main-content">
+
+        <!-- ===== HOME SECTION ===== -->
+        <section id="home" class="container animate-in">
+            <div class="hero">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    AQUASMART v2.1 &nbsp;•&nbsp; IOT ENABLED &nbsp;•&nbsp; REAL-TIME
+                </div>
+
+                <h1 class="hero-title">
+                    Ekosistem Aquarium<br>
+                    <span class="text-gradient">Masa Depan</span>
+                </h1>
+
+                <p class="hero-desc">
+                    Solusi cerdas untuk menjaga ikan kesayangan tetap sehat dengan monitoring suhu presisi,
+                    otomasi pakan, dan kendali penuh dari mana saja — berbasis Cloud & IoT.
+                </p>
+
+                <div class="stat-highlight">
+                    <div class="stat-box">
+                        <span class="stat-val">24/7</span>
+                        <span class="stat-lab">Monitoring</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-box">
+                        <span class="stat-val">100%</span>
+                        <span class="stat-lab">Otomatis</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-box">
+                        <span class="stat-val">&lt;3s</span>
+                        <span class="stat-lab">Update Data</span>
+                    </div>
+                </div>
+
+                <div class="feature-grid">
+                    <div class="feature-card" style="--delay:0.1s">
+                        <div class="feature-icon">🌡️</div>
+                        <div class="feature-body">
+                            <h4>Monitor Suhu</h4>
+                            <p>Pantau suhu air secara real-time. Notifikasi otomatis jika suhu melewati batas aman untuk ikan Anda.</p>
+                        </div>
+                    </div>
+                    <div class="feature-card" style="--delay:0.2s">
+                        <div class="feature-icon">🍽️</div>
+                        <div class="feature-body">
+                            <h4>Pakan Otomatis</h4>
+                            <p>Atur jadwal makan pagi, siang, dan sore. Ikan tetap terpenuhi nutrisinya meski Anda tidak di rumah.</p>
+                        </div>
+                    </div>
+                    <div class="feature-card" style="--delay:0.3s">
+                        <div class="feature-icon">📢</div>
+                        <div class="feature-body">
+                            <h4>Notifikasi Telegram</h4>
+                            <p>Terima alert langsung di Telegram jika ada kondisi abnormal — suhu ekstrem, stok pakan menipis, dan lainnya.</p>
+                        </div>
+                    </div>
+                    <div class="feature-card" style="--delay:0.4s">
+                        <div class="feature-icon">💡</div>
+                        <div class="feature-body">
+                            <h4>Siklus Cahaya</h4>
+                            <p>Atur jadwal nyala-mati lampu aquarium untuk mensimulasikan siklus siang-malam yang alami bagi ikan.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="how-it-works">
+                    <h3>Cara Kerja</h3>
+                    <p class="how-desc">Terhubung dalam 3 langkah mudah</p>
+                    <div class="step-container">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <h5>Input Token</h5>
+                            <p>Masukkan Blynk Auth Token dari aplikasi Blynk Anda.</p>
+                        </div>
+                        <div class="step-arrow">›</div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <h5>Sinkronisasi</h5>
+                            <p>Sistem otomatis menghubungkan ke perangkat IoT Anda.</p>
+                        </div>
+                        <div class="step-arrow">›</div>
+                        <div class="step">
+                            <div class="step-num">3</div>
+                            <h5>Kontrol Penuh</h5>
+                            <p>Pantau dan kendalikan aquarium dari dashboard web.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="spec-strip">
+                    <div class="spec-item"><span>⚡</span> Blynk Cloud API</div>
+                    <div class="spec-item"><span>📡</span> Real-time Sensor</div>
+                    <div class="spec-item"><span>🔒</span> Token Auth</div>
+                    <div class="spec-item"><span>📱</span> Mobile Friendly</div>
+                </div>
+
+                <button class="btn-act shadow-pulse" style="margin-top:2rem;" onclick="showSection('config')">
+                    🔌 HUBUNGKAN PERANGKAT SEKARANG
+                </button>
+            </div>
+        </section>
+
+        <!-- ===== LOGIN SECTION ===== -->
+        <section id="config" class="container login-section" style="display:none; max-width:460px;">
+            <div class="login-header">
+                <div class="login-icon">🔑</div>
+                <h2>Login Perangkat</h2>
+                <p>Masukkan kredensial dan token Blynk Anda untuk memulai monitoring.</p>
+            </div>
+
+            <div class="input-group">
+                <label>Username</label>
+                <input type="text" id="username" placeholder="Masukkan username Anda">
+            </div>
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="password" placeholder="Masukkan password Anda">
+            </div>
+            <div class="input-group">
+                <label>Blynk Auth Token</label>
+                <input type="text" id="blynk-token" placeholder="Contoh: aBcDeF1234567890...">
+                <small>Token dapat ditemukan di aplikasi Blynk → Device Info</small>
+            </div>
+
+            <button class="btn-act" onclick="handleAuth()">🚀 HUBUNGKAN SEKARANG</button>
+            <p id="auth-status" style="margin-top:12px; font-size:0.85rem;"></p>
+
+            <div class="login-info">
+                <span>ℹ️</span> Pastikan perangkat IoT Anda sudah terhubung ke internet sebelum login.
+            </div>
+        </section>
+
+        <!-- ===== DASHBOARD SECTION ===== -->
+        <section id="dashboard" class="container dashboard-section" style="display:none;">
+
+            <!-- Clock -->
+            <div class="card full-width clock-highlight">
+                <div id="real-time-clock">00:00:00</div>
+                <div id="real-date">Memuat Tanggal...</div>
+                <div class="clock-label">⏱️ Waktu Sistem AquaSmart</div>
+            </div>
+
+            <!-- Sensor Cards -->
+            <div class="grid">
+                <div class="card sensor-card">
+                    <div class="sensor-icon">🌡️</div>
+                    <p class="label">Suhu Air</p>
+                    <div class="value"><span id="temp-val">0</span>°C</div>
+                    <div class="sensor-sub">Normal: 24–28°C</div>
+                </div>
+
+                <div class="card sensor-card" id="pakan-card">
+                    <div class="sensor-icon">📦</div>
+                    <p class="label">Stok Pakan</p>
+                    <div class="value"><span id="dist-val">0</span> <small>cm</small></div>
+                    <div class="sensor-sub">Jarak sensor ke permukaan pakan</div>
+                </div>
+
+                <div class="card control-card">
+                    <div class="sensor-icon">💡</div>
+                    <p class="label">Kontrol Lampu</p>
+                    <p class="control-desc">Nyalakan atau matikan lampu aquarium secara manual.</p>
+                    <div class="btn-row">
+                        <button class="btn-on" onclick="controlBlynk('V2', 1)">✅ ON</button>
+                        <button class="btn-off" onclick="controlBlynk('V2', 0)">❌ OFF</button>
+                    </div>
+                </div>
+
+                <div class="card control-card">
+                    <div class="sensor-icon">🍽️</div>
+                    <p class="label">Beri Pakan</p>
+                    <p class="control-desc">Aktifkan feeder untuk memberi makan ikan sekarang.</p>
+                    <button class="btn-act" onclick="controlBlynk('V3', 1)">🐟 KASIH PAKAN</button>
+                </div>
+            </div>
+
+            <!-- Jadwal Pakan -->
+            <div class="card full-width schedule-card">
+                <div class="schedule-header">
+                    <span class="schedule-icon">🍽️</span>
+                    <div>
+                        <h3>Jadwal Pakan Harian</h3>
+                        <p>Atur waktu makan otomatis (format 24 jam)</p>
+                    </div>
+                </div>
+                <div class="schedule-grid">
+                    <div class="schedule-item">
+                        <div class="time-label">🌅 Pagi</div>
+                        <input type="number" id="h-pagi" value="6" class="num-input">
+                        <div class="time-unit">:00</div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="time-label">☀️ Siang</div>
+                        <input type="number" id="h-siang" value="12" class="num-input">
+                        <div class="time-unit">:00</div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="time-label">🌇 Sore</div>
+                        <input type="number" id="h-sore" value="15" class="num-input">
+                        <div class="time-unit">:00</div>
+                    </div>
+                </div>
+                <button class="btn-act" onclick="updateJadwalPakan()">💾 SIMPAN JADWAL PAKAN</button>
+            </div>
+
+            <!-- Jadwal Lampu -->
+            <div class="card full-width schedule-card">
+                <div class="schedule-header">
+                    <span class="schedule-icon">💡</span>
+                    <div>
+                        <h3>Jadwal Siklus Lampu</h3>
+                        <p>Simulasikan siklus siang-malam untuk ikan (format 24 jam)</p>
+                    </div>
+                </div>
+                <div class="schedule-grid">
+                    <div class="schedule-item">
+                        <div class="time-label">🌞 Nyala</div>
+                        <input type="number" id="h-lampu-on" value="18" class="num-input">
+                        <div class="time-unit">:00</div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="time-label">🌙 Mati</div>
+                        <input type="number" id="h-lampu-off" value="6" class="num-input">
+                        <div class="time-unit">:00</div>
+                    </div>
+                </div>
+                <button class="btn-act" onclick="updateJadwalLampu()">💾 SIMPAN JADWAL LAMPU</button>
+            </div>
+
+            <!-- Mode Toggle -->
+            <div class="card full-width mode-flex">
+                <div style="text-align:left;">
+                    <h3 id="status-mode" style="margin:0; font-size:1.1rem;">⚙️ Mode Manual</h3>
+                    <p style="font-size:0.82rem; color:#94a3b8; margin-top:4px;">
+                        Aktifkan mode otomatis agar pakan & lampu berjalan sesuai jadwal.
+                    </p>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="mode-auto" onclick="toggleAuto()">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <button class="btn-logout" onclick="location.reload()">🚪 LOGOUT</button>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
