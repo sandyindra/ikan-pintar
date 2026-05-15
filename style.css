@@ -2,7 +2,7 @@
    AQUASMART v2.1 - DEEP OCEAN DARK THEME
 ================================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
 :root {
     --bg-color: #020b18;
@@ -25,7 +25,8 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 500;
     background: radial-gradient(ellipse at 50% 0%, #062040 0%, #020b18 60%);
     background-attachment: fixed;
     color: var(--text-primary);
@@ -296,7 +297,7 @@ body {
     border: 1px solid transparent;
     color: var(--text-secondary);
     cursor: pointer;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 500; font-size: 0.88rem;
     padding: 8px 14px;
     transition: var(--smooth);
@@ -460,7 +461,7 @@ body {
     font-family: 'Syne', sans-serif; font-weight: 800; font-size: 0.85rem;
     margin: 0 auto 10px;
 }
-.step-arrow { font-size: 1.5rem; color: var(--accent-dim); font-weight: 300; flex-shrink: 0; }
+.step-arrow { font-size: 1.5rem; color: var(--accent-dim); font-weight: 500; flex-shrink: 0; }
 
 /* ─── Spec Strip ──────────────────────────────────────────────── */
 .spec-strip { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 1.5rem; }
@@ -659,7 +660,7 @@ input {
     border: 1px solid rgba(56,189,248,0.12);
     background: var(--card-inner); color: var(--text-primary);
     width: 100%; margin-bottom: 0;
-    font-family: 'DM Sans', sans-serif; font-size: 0.92rem; transition: var(--smooth);
+    font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.92rem; transition: var(--smooth);
 }
 input::placeholder { color: rgba(106,154,184,0.45); }
 input:focus { outline: none; border-color: var(--accent-color); box-shadow: 0 0 0 3px rgba(56,189,248,0.1); }
@@ -670,7 +671,7 @@ input:focus { outline: none; border-color: var(--accent-color); box-shadow: 0 0 
 }
 
 /* ─── Buttons ─────────────────────────────────────────────────── */
-button { cursor: pointer; border: none; font-family: 'DM Sans', sans-serif; }
+button { cursor: pointer; border: none; font-family: 'Plus Jakarta Sans', sans-serif; }
 .btn-act {
     background: linear-gradient(135deg, var(--accent-color), #1a9fd4);
     color: #04080f; padding: 13px 20px; width: 100%;
@@ -729,20 +730,110 @@ input:checked + .slider:before {
     100% { box-shadow: 0 0 0 0 rgba(56,189,248,0); }
 }
 
-/* ─── Mobile ──────────────────────────────────────────────────── */
+/* (mobile styles dipindah ke bawah) */
+/* ─── AUTO PAGE (pengganti modal) ────────────────────────────── */
+.auto-page-section { text-align: left; }
+
+.auto-page-header {
+    margin-bottom: 1.6rem;
+}
+
+.btn-back {
+    background: rgba(56,189,248,0.08);
+    border: 1px solid rgba(56,189,248,0.2) !important;
+    color: var(--accent-color);
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: var(--smooth);
+}
+.btn-back:hover {
+    background: rgba(56,189,248,0.15);
+    transform: translateX(-2px);
+}
+
+.auto-page-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.auto-page-icon {
+    font-size: 1.8rem;
+    width: 52px; height: 52px;
+    background: rgba(129,140,248,0.12);
+    border: 1px solid rgba(129,140,248,0.25);
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+}
+.auto-page-title-wrap h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.2rem; font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+}
+.auto-page-title-wrap p {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+/* ─── Navbar Mobile: Bottom Bar ──────────────────────────────── */
 @media (max-width: 768px) {
+    .navbar {
+        top: unset;
+        bottom: 0;
+        border-bottom: none;
+        border-top: 1px solid var(--card-border);
+        padding: 0;
+        height: 60px;
+        box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
+    }
+    .logo { display: none; }
+    .nav-links {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        height: 100%;
+        gap: 0;
+    }
+    .nav-links button {
+        flex: 1;
+        height: 100%;
+        border-radius: 0;
+        font-size: 0.7rem;
+        flex-direction: column;
+        gap: 2px;
+        padding: 8px 4px;
+        border: none !important;
+        background: none;
+    }
+    .nav-links button span {
+        display: block !important;
+        font-size: 1.4rem;
+    }
+    .nav-links button:hover {
+        background: rgba(56,189,248,0.08);
+        border-radius: 0;
+    }
+    .main-content {
+        margin-top: 20px;
+        padding: 16px 12px 80px;
+    }
     .hero-title { font-size: 2rem; }
     .grid, .feature-grid { grid-template-columns: 1fr; }
     .step-container { flex-direction: column; }
     .step-arrow { transform: rotate(90deg); }
     #real-time-clock { font-size: 2.8rem; }
-    .container { padding: 1.8rem 1.4rem; }
-    .nav-links button span { display: none; }
+    .container { padding: 1.4rem 1.2rem; border-radius: 1.4rem; }
     .schedule-grid { flex-direction: column; align-items: center; }
     .spec-strip { gap: 6px; }
     .auto-trigger-card { flex-direction: column; text-align: center; }
     .auto-trigger-card .card-info { text-align: center; }
     .coral-left { width: 100px; }
     .coral-right { width: 90px; }
-    .modal-box { padding: 1.6rem; }
 }
